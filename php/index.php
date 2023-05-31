@@ -1,3 +1,12 @@
+<?php 
+session_start();
+
+	include("connection.php");
+	include("functions.php");
+
+	$user_data = check_login($con);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -260,7 +269,6 @@
                                 <li>1920 x 1080 Resolution</li>
                                 <li>8,000,000:1 Dynamic Contrast Ratio</li>
                             </ul>
-                            
                         </p>
                     </div>
                 </div>
@@ -292,3 +300,9 @@
         <div class="foot-1">Copyright &copy; OK Computer Latvian 2023. All Rights Reserved</div>
     </body>
 </html>
+
+
+
+    
+
+    

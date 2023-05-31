@@ -22,6 +22,7 @@
                     <a href="./contacts.html">Contact Us</a>
                     <a href="./policy.html">Policies</a>
                 </span>
+                
                 <span class="span-1">
                     <div class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account<span class="caret"></span></a>
@@ -31,7 +32,7 @@
                             <li><a href="./available.html" class="dropdown-item">Change Password</a></li>
                         </ul>
                     </div>
-                    <a href="./available.html">Create Account</a>
+                    
                     <a href="./available.html">Login</a>
                 </span>
             </div>
@@ -71,6 +72,72 @@
                     </div>
             </nav>
         </div>
+        <section class="prices" id="prices">
+            <div class="prices-text container">
+                <h2 class="prices-title">Shopping Cart</h2>
+                <p class="prices-description">Here you can see your shopping cart and all your products in them!
+                </p>
+            </div>
+        </section>
+       <!--Experiments shoping cart--> 
+        <body>
+            <div class="cart-container">
+                <div class="cart-items"></div>
+            
+            <script src="https://unpkg.com/cart-localstorage@1.1.4/dist/cart-localstorage.min.js" type="text/javascript"></script>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h2>Cart</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody class="cart">
+                            </tbody>
+                            <tfoot>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-right">Total: <strong class="total"></strong></td>
+                                <td></td>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function renderCart(items) {
+                    const $cart = document.querySelector(".cart")
+                    const $total = document.querySelector(".total")
+        
+                    $cart.innerHTML = items.map((item) => `
+                            <tr>
+                                <td>#${item.id}</td>
+                                <td>${item.name}</td>
+                                <td>${item.quantity}</td>
+                                <td style="width: 60px;">    
+                                    <button type="button" class="btn btn-block btn-sm btn-outline-primary"
+                                        onClick="cartLS.quantity(${item.id},1)">+</button>
+                                </td>
+                                <td style="width: 60px;">    
+                                    <button type="button" class="btn btn-block btn-sm btn-outline-primary"
+                                        onClick="cartLS.quantity(${item.id},-1)">-</button>
+                                </td>
+                                <td class="text-right">$${item.price}</td>
+                                <td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
+                            </tr>`).join("")
+        
+                    $total.innerHTML = "$" + cartLS.total()
+                }
+                renderCart(cartLS.list())
+                cartLS.onChange(renderCart)
+            </script>
+        </body>
+    
+    
+        </section>
+     
         <main style="text-align: center;margin-top: 15rem;margin-bottom: 10rem;">
             <h1 class="text-danger"><i class="fas fa-ban text-danger" style="font-size: 15rem;margin-bottom: 2rem;"></i><br>Content Not Available !</h1>
         </main>
