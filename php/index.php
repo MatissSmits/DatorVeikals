@@ -40,7 +40,7 @@ session_start();
                             <li><a href="./available.html" class="dropdown-item">Change Password</a></li>
                         </ul>
                     </div>
-                    <a href="./available.html">Create Account</a>
+                
                     <a href="./available.html">Login</a>
                 </span>
             </div>
