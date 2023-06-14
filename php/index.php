@@ -35,9 +35,9 @@ session_start();
                     <div class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./available.html" class="dropdown-item">Profile</a></li>
+                            
                             <li><a href="./available.html" class="dropdown-item">Orders History</a></li>
-                            <li><a href="./available.html" class="dropdown-item">Change Password</a></li>
+                            
                         </ul>
                     </div>
                 
