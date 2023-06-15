@@ -42,6 +42,23 @@ session_start();
                     </div>
                 
                     <a href="./available.html">Login</a>
+                    <div class="user-cart">  
+        <?php           
+        if(isset($_SESSION['user_id'])){
+          ?>
+          <a href="login.php" style="text-decoration:none;">
+            <i class="fa fa-user mr-5" style="font-size:30px; color:#fff;" aria-hidden="true"></i>
+         </a>
+          <?php
+        } else {
+            ?>
+            <a href="login.php" style="text-decoration:none;">
+                    <i class="fa fa-sign-in mr-5" style="font-size:30px; color:#fff;" aria-hidden="true"></i>
+            </a>
+
+            <?php
+        } ?>
+    </div> 
                 </span>
             </div>
             <nav class="navbar navbar-expand">
